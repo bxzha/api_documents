@@ -2,8 +2,8 @@
 
 ## 服务信息
 
-- **API 端点**：`http://116.62.77.28:6000/v1/chat/completions`
-- **模型 ID**：`/root/zhabx/model/AIReady-SFT-0605`
+- **API 端点**：`http://36.140.161.122:6005/v1/chat/completions`
+- **模型 ID**：`AIReady-sft`
 - **认证方式**：`AIReady-API-Key-Test`
 - **最大上下文长度**：32768 tokens
 - **请求方法**：POST
@@ -28,11 +28,11 @@ from openai import OpenAI
 
 client = OpenAI(
     api_key="EMPTY",
-    base_url="http://116.62.77.28:6000/v1/",
+    base_url="http://36.140.161.122:6005/v1/",
 )
 
 completion = client.chat.completions.create(
-    model="/root/zhabx/model/AIReady-SFT-0605",
+    model="AIReady-sft",
     messages=[{"role": "user", "content": "你好"}],
     max_tokens=512,
     temperature=0.7,
@@ -44,10 +44,10 @@ print(response["choices"][0]["message"]["content"])
 ## 调用示例（curl）
 
 ```bash
-curl http://47.112.29.208:6000/v1/chat/completions \
+curl http://36.140.161.122:6005/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "/root/zhabx/model/AIReady-SFT-0605",
+    "model": "AIReady-sft",
     "messages": [{"role": "user", "content": "你好"}],
     "max_tokens": 512,
     "temperature": 0.7
