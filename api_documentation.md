@@ -3,7 +3,7 @@
 ## 服务信息
 
 - **API 端点**：`http://36.140.161.122:6005/v1/chat/completions`
-- **模型 ID**：`AIReady-sft`
+- **模型 ID**：`AIReady-sft-0625`
 - **认证方式**：`AIReady-API-Key-Test`
 - **最大上下文长度**：32768 tokens
 - **请求方法**：POST
@@ -32,7 +32,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model="AIReady-sft",
+    model="AIReady-sft-0625",
     messages=[{"role": "user", "content": "你好"}],
     max_tokens=512,
     temperature=0.7,
@@ -47,7 +47,7 @@ print(response["choices"][0]["message"]["content"])
 curl http://36.140.161.122:6005/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "AIReady-sft",
+    "model": "AIReady-sft-0625",
     "messages": [{"role": "user", "content": "你好"}],
     "max_tokens": 512,
     "temperature": 0.7
